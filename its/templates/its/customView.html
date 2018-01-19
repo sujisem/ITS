@@ -1,0 +1,17 @@
+<html>
+<title>
+   Intelligent tutoring systems
+</title>
+<body>
+{% if all_qns %}
+    <ul>
+    {% for question in all_qns %}
+        <li>{{ question.desc }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+</body
+</html>

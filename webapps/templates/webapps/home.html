@@ -1,0 +1,12 @@
+{% extends "webapps/header.html" %}
+
+{% block content %}
+</p>Hey,welcome to online C++ programing!</p>
+
+{% include "webapps/includes/htmlsnippet.html" %}
+
+   {% for Question in object_list %}
+      <h4>Question No:{{Question.id}}{{ Question.desc|safe|linebreaks}}</h4>
+            {% include "webapps/answers.html" %}
+   {% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% block content %}
+
+            <table>
+            {% for Answers in opt %}
+                <tr><td>
+                <input type="radio" name="options" value={{Answers.id}}>{{ Answers.desc}}
+                </td></tr>
+            {% endfor %}
+            </table>
+    <div class="buttonpos">
+   <h1><input type="button" value="Submit" onclick="javascript:submit()"></h1>
+    </div>
+{% endblock %}

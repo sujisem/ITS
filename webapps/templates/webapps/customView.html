@@ -1,0 +1,48 @@
+<html>
+<head>
+    <style>
+        .itsForm {
+    padding-top: calc(10%);
+    padding-left: 25%;
+    padding-bottom:calc(30%);
+    font-size:20px;
+    color: green;
+    background: grey;
+    }
+    .header {
+    font-size:40px;
+    color:red
+    padding-top: calc(20%);
+    padding-left: 25%;
+    }
+    </style>
+</head>
+<title>
+   Intelligent tutoring system
+</title>
+<body>
+<div class="header">
+  Intelligent Tutoring System
+</div>
+<form name="Question" action="processForm" method="post">
+    <div class="itsForm">
+    {{msg}}
+{% if qn %}
+    <ul>
+    {% for question in qn %}
+        <li>{{ question.desc|safe|linebreaks}}</li>
+        <input type="hidden" name="qnid" value="{{question.id}}">
+        {% include "webapps/answers.html" %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+    {% csrf_token %}
+        </div>
+</form>
+
+</body>
+
+
+</html>
